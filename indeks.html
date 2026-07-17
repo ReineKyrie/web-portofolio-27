@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reine Kyrie | Exploring Medicine, Art, and the Cosmos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;family=Space+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#f3dfca",
+                    "tertiary-container": "#ffde80",
+                    "surface-container-low": "#0e1c2f",
+                    "on-primary-container": "#6f6151",
+                    "surface-tint": "#d6c4af",
+                    "primary": "#fffdff",
+                    "surface-container": "#132033",
+                    "on-tertiary-container": "#796000",
+                    "on-tertiary-fixed": "#241a00",
+                    "tertiary-fixed": "#ffe088",
+                    "background": "#061426",
+                    "inverse-on-surface": "#243145",
+                    "tertiary": "#fffdff",
+                    "secondary": "#aac9f4",
+                    "on-secondary-fixed": "#001c38",
+                    "on-primary-fixed-variant": "#514535",
+                    "on-secondary-container": "#99b7e2",
+                    "surface-dim": "#061426",
+                    "surface-variant": "#28354a",
+                    "secondary-fixed-dim": "#aac9f4",
+                    "error": "#ffb4ab",
+                    "on-surface": "#d6e3fe",
+                    "primary-container": "#f1dec9",
+                    "secondary-container": "#29486d",
+                    "inverse-surface": "#d6e3fe",
+                    "secondary-fixed": "#d3e4ff",
+                    "on-surface-variant": "#cfc5ba",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-background": "#d6e3fe",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-container-highest": "#28354a",
+                    "inverse-primary": "#6a5c4c",
+                    "outline-variant": "#4d463e",
+                    "surface-container-high": "#1d2a3e",
+                    "on-error": "#690005",
+                    "on-primary": "#392f20",
+                    "on-secondary-fixed-variant": "#29486d",
+                    "surface": "#061426",
+                    "on-tertiary": "#3c2f00",
+                    "surface-bright": "#2d3a4e",
+                    "error-container": "#93000a",
+                    "on-primary-fixed": "#231a0d",
+                    "surface-container-lowest": "#020e21",
+                    "primary-fixed-dim": "#d6c4af",
+                    "on-secondary": "#0e3255",
+                    "outline": "#988f86"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "mobile-margin": "20px",
+                    "section-padding": "80px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-md": ["Playfair Display"],
+                    "label-sm": ["Space Mono"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "display-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #061426;
+            color: #f1dec9;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(30, 62, 98, 0.4);
+            backdrop-filter: blur(12px);
+            border: 0.5px solid rgba(255, 253, 255, 0.2);
+        }
+        .star-divider::before, .star-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #f1dec9, transparent);
+        }
+        .custom-slider {
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .custom-slider::-webkit-scrollbar {
+            display: none;
+        }
+        .slider-card {
+            scroll-snap-align: center;
+        }
+        .sparkle-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-background/40 backdrop-blur-md z-50 border-b border-primary/20">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md text-primary tracking-tight">Reine Kyrie</div>
+<div class="hidden md:flex gap-8 items-center font-label-sm text-label-sm tracking-widest uppercase">
+<a class="text-primary border-b border-primary pb-1" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">My Learning</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Gallery</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex flex-col items-center justify-center pt-24 overflow-hidden px-gutter">
+
+<div class="relative z-10 text-center max-w-4xl fade-in">
+<span class="font-label-sm text-label-sm tracking-[0.3em] uppercase text-primary-container mb-6 block">Future Student Physician &amp; Artist</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">
+                Exploring Medicine, Art, <br class="hidden md:block"/> and the <span class="italic font-normal">Cosmos</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                Hi, I'm <span class="text-primary-container font-semibold">Reine Kyrie Inggou Saragih</span>. A student physician in the making, artist at heart, and cosmic explorer bridging the gap between clinical precision and creative wonder.
+            </p>
+<div class="flex justify-center gap-6">
+<a class="px-8 py-3 border border-primary-container text-primary-container font-label-sm uppercase tracking-widest hover:bg-primary-container hover:text-background transition-all duration-300" href="#about">
+                    Discover More
+                </a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary-container">expand_more</span>
+</div>
+</header>
+<!-- Star Divider -->
+<div class="flex items-center justify-center gap-4 py-12 px-gutter overflow-hidden">
+<div class="h-[1px] w-full max-w-[400px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<span class="material-symbols-outlined text-primary-container sparkle-icon" style="font-variation-settings: 'FILL' 1;">spark</span>
+<div class="h-[1px] w-full max-w-[400px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+</div>
+<!-- About & Interests -->
+<section class="py-section-padding max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-16 items-start" id="about">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-3 text-primary-container">
+<span class="material-symbols-outlined">medical_services</span>
+<h2 class="font-headline-md text-headline-md">The Future Doctor</h2>
+</div>
+<div class="glass-card p-8 space-y-6">
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                    Driven by a profound curiosity for the human body and the biological mechanisms of life, my journey in medicine is a pursuit of both science and empathy. 
+                </p>
+<p class="font-body-md text-on-surface-variant">
+                    I spend my quiet hours immersed in medical journals and classic sci-fi literature—where the boundaries of what is possible are constantly being tested. From the intricacies of molecular biology to the vast questions of bioethics, I find beauty in the precision of the healing arts.
+                </p>
+<ul class="font-label-sm text-primary-container space-y-2 uppercase tracking-tighter">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> Clinical Research</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> Medical Literature</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> Human Anatomy</li>
+</ul>
+</div>
+</div>
+<div class="space-y-8">
+<div class="inline-flex items-center gap-3 text-primary-container">
+<span class="material-symbols-outlined">brush</span>
+<h2 class="font-headline-md text-headline-md">The Artist</h2>
+</div>
+<div class="glass-card p-8 space-y-6">
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                    Where medicine requires rigorous logic, art offers a celestial canvas for expression. Drawing is my creative anchor, a way to visualize the intangible.
+                </p>
+<p class="font-body-md text-on-surface-variant">
+                    My illustrations often blend anatomical accuracy with surreal, cosmic elements—star-filled lungs or constellations mirrored in the iris. This balance of science and creativity allows me to approach problems with a unique perspective, seeing patterns where others see chaos.
+                </p>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="aspect-square bg-surface-container-high relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A delicate graphite and digital illustration of a human heart floating in a deep space nebula, with gold-threaded arteries and glowing star dust swirling around the ventricles, dark navy background with warm beige accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy5JhOb_9YU-EfLoVsm9LuIvJDHRgs3X20uyKgVFc_kN2ec9DnybASzS04cTgIsBKh8-dHqztitjJHsWzaaZbT76PdEae03Puwup7uV7NSPXTviKRJVPaLKc5pISUpKB33B83VtN9Wyh2ixXJiuopYtD7Sz1Ka873rp1FJhz8wnRrWiK9IWrvpLbTxLGVHUx8LHvdux1uL9RKICx0euV2PhiujMb2URbPVAIR4yHB82cOGpZ_98zddNQ"/>
+</div>
+<div class="aspect-square bg-surface-container-high relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist line art drawing of a medical caduceus where the snakes are replaced by flowing cosmic light, set against a dark, elegant background with subtle star constellations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWZKI8bnzHEImCieDKStreHfinzq78l43MqHEaj3z6c6toFYgwfJZis6XdFo8Eu4zx9bEfueOLCg-jyu31YuUSQ0Hf9-TmZ2W4sFneo7bOGd1FAT1xDnXSPDxygtPTx_ptC2l0QfPZhfwiGpu6S1eP7ZeXFixvFCsVhQ6VVNsJZUbe70lgKBylxjaUcJQ8807VwqEdQU336FHDrG9_3Sevv3txrZ4P1QGbH697UPuxJldY594RZSBchA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Learning Showcase (Slider) -->
+<section class="py-section-padding bg-surface-container-lowest/50">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-sm text-label-sm tracking-widest text-primary-container uppercase mb-2 block">Skill Evolution</span>
+<h2 class="font-headline-md text-headline-md text-primary">Learning Journey: HTML &amp; CSS</h2>
+</div>
+<div class="flex gap-4">
+<button class="p-2 border border-primary/20 hover:bg-primary/10 transition-colors" onclick="document.getElementById('slider').scrollBy({left: -300, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-primary/20 hover:bg-primary/10 transition-colors" onclick="document.getElementById('slider').scrollBy({left: 300, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="custom-slider flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory" id="slider">
+<!-- Card 1 -->
+<div class="slider-card min-w-[300px] md:min-w-[400px] snap-center">
+<div class="glass-card p-8 h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">html</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">01 / 03</span>
+</div>
+<h3 class="font-headline-md text-2xl text-primary mb-4">My First HTML Structure</h3>
+<p class="font-body-md text-on-surface-variant mb-6">
+                                Understanding the semantic bones of the web. From headers to footers, building a robust skeleton for information.
+                            </p>
+</div>
+<div class="bg-background/60 p-4 rounded-lg border border-primary/10">
+<code class="font-label-sm text-[11px] text-primary-container">
+<header><br/>
+                                  <h1>Cosmos</h1><br/>
+</header>
+</code>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="slider-card min-w-[300px] md:min-w-[400px] snap-center">
+<div class="glass-card p-8 h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">css</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">02 / 03</span>
+</div>
+<h3 class="font-headline-md text-2xl text-primary mb-4">Styling with CSS</h3>
+<p class="font-body-md text-on-surface-variant mb-6">
+                                Infusing aesthetics into logic. Mastering Flexbox, Grid, and the art of subtle typography transitions.
+                            </p>
+</div>
+<div class="bg-background/60 p-4 rounded-lg border border-primary/10">
+<code class="font-label-sm text-[11px] text-primary-container">
+                                .star {<br/>
+                                  color: #f1dec9;<br/>
+                                  display: flex;<br/>
+                                }
+                            </code>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="slider-card min-w-[300px] md:min-w-[400px] snap-center">
+<div class="glass-card p-8 h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">touch_app</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">03 / 03</span>
+</div>
+<h3 class="font-headline-md text-2xl text-primary mb-4">Interactive Elements</h3>
+<p class="font-body-md text-on-surface-variant mb-6">
+                                Creating movement and life. Focusing on hover states, animations, and user-centric navigation flows.
+                            </p>
+</div>
+<div class="bg-background/60 p-4 rounded-lg border border-primary/10">
+<code class="font-label-sm text-[11px] text-primary-container">
+                                .button:hover {<br/>
+                                  transform: scale(1.1);<br/>
+                                  transition: 0.3s;<br/>
+                                }
+                            </code>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Creative Gallery -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Creative Gallery</h2>
+<div class="h-1 w-12 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<div class="group relative overflow-hidden aspect-[4/5] glass-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional medical illustration showing a cross-section of an eye where the retina transitions into a vibrant spiral galaxy with violet and blue nebula gases, high contrast, elegant dark aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnEBlo5V43aW1HfVbxtjMIjokCc4dCkCJqYfrheYdYjJmp2GOuuFyneofiQISRQHWJ_Zw3hRXXkaMRMnH2bAY8Mwvr8mon1-fIKNrdpMnnXqPJjFvZ6-2aSe7gvHXOORGi1HpBzGbxknsnUS2UfYw8uJ0YInBzJtz4PafKxTmrezFyNdShMCIFxHsG38NT4eCuoCiQbGuJ3vhqR5y3mXY3eabTBCQqw8XR-X-ZiZKxIBbLCDVxuFd-VA"/>
+<div class="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="font-label-sm text-primary-container mb-1">Illustration</p>
+<h4 class="font-headline-md text-xl text-primary">The Visionary Core</h4>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-[4/5] glass-card md:mt-12">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Conceptual digital art piece of a DNA double helix made of shimmering gold dust and floating stars against a deep navy blue background, sharp focus, serene and scientific atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDdTanNBaY5J4lJSzhLFt_cK2b4oU-7ej2DyKT2V7wqgK55OnTrZyOc-Ug3VvrJtUuiyCdqzhW2EObgytVVtFH5kUE4haqOOVtkXNG26XBwLWZYB827WJr9WoFa1sFHq0MJBn2tzcBCo79jnUgtnSfptUcgw6oMe1wZQtnhcAB9B1UOBWzrCVNbY7s6_1YfXqYMkkN3cr9D8z7svJcWBTDqW8_RUIxotjlTzbw79Ae6UX8otYJ6TsgLQ"/>
+<div class="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="font-label-sm text-primary-container mb-1">Science Art</p>
+<h4 class="font-headline-md text-xl text-primary">Genetic Constellations</h4>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-[4/5] glass-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A moody, high-key photograph of a vintage microscope on a dark walnut desk with a telescope visible in the blurred background, illuminated by soft golden moonlight, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4mRVYee87zwtCkkOhCqcnwp7Co-A8cEuzNkZSHGQ5RNOfZCgBiVJDT_S_WiRk8DySI_NNcfXm2cGVQFCbu9H0k7JBhhRHgiVKurGEPVKoedep6i6ud55Qbv7s20gRmnblg4pPXlP_iU1EzCm690UGd5CoSxlyhMdVnFZUkwSofzHJvPRduZg6XGJVt1QsgWf4wAlOpKVEtr7JO3WW7aNVdwLXlRLrpcSP1e5UwDz_AhwHoQQXMbE6Q"/>
+<div class="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="font-label-sm text-primary-container mb-1">Photography</p>
+<h4 class="font-headline-md text-xl text-primary">Parallel Tools</h4>
+</div>
+</div>
+</div>
+<!-- Quote -->
+<div class="relative py-20 px-8 text-center glass-card border-none">
+
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6">format_quote</span>
+<blockquote class="font-display-lg text-2xl md:text-4xl text-primary italic mb-6">
+                    "The cosmos is within us. We are made of star-stuff."
+                </blockquote>
+<cite class="font-label-sm text-primary-container uppercase tracking-widest not-italic">— Carl Sagan</cite>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-padding border-t border-primary/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter gap-unit max-w-container-max mx-auto">
+<div class="space-y-4 text-center md:text-left">
+<div class="font-display-lg text-display-lg-mobile text-primary">Reine Kyrie</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Reine Kyrie Inggou Saragih • Built with stars, HTML, and CSS</p>
+</div>
+<div class="flex gap-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="#">Email</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="#">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .glass-card').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Background Star Parallax micro-interaction
+        window.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) / 100;
+            const moveY = (e.clientY - window.innerHeight / 2) / 100;
+            document.querySelectorAll('webgl-shader').forEach(shader => {
+                shader.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
+</body></html>
